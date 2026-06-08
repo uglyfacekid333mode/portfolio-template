@@ -58,9 +58,9 @@
     document.title = (C.brand?.full || 'Detailing') + ' — Премиальный детейлинг авто';
     const L = C.logo || {};
     const logoHtml = L.image
-      ? `<img class="brand__logo${L.autoResize ? ' is-auto' : ''}" src="${L.image}" alt="${C.brand?.full || ''}"
+      ? `<img class="brand__logo${L.autoResize ? ' is-auto' : ''}${L.rounded ? ' is-rounded' : ''}" src="${L.image}" alt="${C.brand?.full || ''}"
               style="${L.autoResize ? `max-height:${L.maxHeight || 40}px` : ''}" />`
-      : `<span class="brand__mark">${(L.name || 'A')[0]}</span>` +
+      : `${L.showMark === false ? '' : `<span class="brand__mark">${(L.name || 'A')[0]}</span>`}` +
         `<span class="brand__text">${L.name || ''}<span>${L.nameAccent || ''}</span></span>`;
     document.querySelectorAll('[data-brand]').forEach(el => { el.innerHTML = logoHtml; });
 
@@ -135,12 +135,10 @@
     const wa = C.links?.whatsappLink || (C.contact?.whatsapp
       ? `https://wa.me/${C.contact.whatsapp}?text=${encodeURIComponent(C.whatsappPrefill || '')}` : '');
     const mail = C.contact?.email ? 'mailto:' + C.contact.email : '';
-    const viber = C.links?.viber || (C.contact?.viberPhone ? 'viber://chat?number=' + C.contact.viberPhone : '');
     const CH = [
       { url: wa, label: 'WhatsApp', cls: 'is-wa' },
       { url: C.links?.telegram, label: 'Telegram', cls: 'is-tg' },
       { url: C.links?.instagram, label: 'Instagram', cls: 'is-ig' },
-      { url: viber, label: 'Viber', cls: 'is-vb' },
       { url: C.links?.twogis, label: '2ГИС', cls: 'is-gis' },
       { url: C.links?.tiktok, label: 'TikTok', cls: 'is-tt' },
       { url: C.links?.vk, label: 'VK', cls: 'is-vk' },
@@ -153,7 +151,7 @@
     if (channels) channels.innerHTML = CH.map(c =>
       `<a class="channel ${c.cls}" href="${c.url}" target="_blank" rel="noopener"><span class="channel__icon">${c.icon}</span>${c.label}</a>`).join('');
     const dock = document.getElementById('dock');
-    if (dock) dock.innerHTML = CH.filter(c => ['is-wa', 'is-tg', 'is-vb', 'is-ig', 'is-gis'].includes(c.cls))
+    if (dock) dock.innerHTML = CH.filter(c => ['is-wa', 'is-tg', 'is-ig', 'is-gis'].includes(c.cls))
       .map(c => `<a class="dock__btn ${c.cls}" href="${c.url}" target="_blank" rel="noopener" aria-label="${c.label}" title="${c.label}">${c.icon}</a>`).join('');
 
     const SOCIAL = [
