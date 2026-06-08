@@ -72,6 +72,13 @@
       const v = C.hero?.[el.dataset.hero]; if (v != null) el.textContent = v;
     });
 
+    /* 3.1 Статистика (цифры на главном) */
+    const heroStats = document.getElementById('heroStats');
+    if (heroStats && Array.isArray(C.stats)) {
+      heroStats.innerHTML = C.stats.map(s => `
+        <div class="stat"><span class="stat__top"><span class="stat__num" data-count="${s.number || 0}">0</span>${s.suffix ? `<span class="stat__suffix">${s.suffix}</span>` : ''}</span><span class="stat__label">${s.label || ''}</span></div>`).join('');
+    }
+
     /* 4. Контакты */
     const setContact = (key, val, href) => document.querySelectorAll(`[data-contact="${key}"]`).forEach(el => {
       el.textContent = val || ''; if (href && el.tagName === 'A') el.href = href;

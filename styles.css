@@ -45,9 +45,9 @@ section[id] { scroll-margin-top: 84px; }
   color: #04110f; background: var(--brand);
   border: none; border-radius: 100px; cursor: pointer;
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.3s;
-  box-shadow: 0 10px 30px -8px rgba(54, 226, 196, 0.5);
+  box-shadow: 0 10px 30px -8px color-mix(in srgb, var(--brand) 50%, transparent);
 }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -10px rgba(54, 226, 196, 0.6); }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -10px color-mix(in srgb, var(--brand) 60%, transparent); }
 .btn--lg { --pad: 17px 34px; font-size: 1rem; }
 .btn--sm { --pad: 10px 20px; font-size: 0.875rem; }
 .btn--full { width: 100%; }
@@ -80,7 +80,7 @@ section[id] { scroll-margin-top: 84px; }
   width: 38px; height: 38px; display: grid; place-items: center;
   font-family: "Sora", sans-serif; font-weight: 800; color: #04110f;
   background: var(--grad); border-radius: 11px;
-  box-shadow: 0 8px 20px -6px rgba(79, 140, 255, 0.6);
+  box-shadow: 0 8px 20px -6px color-mix(in srgb, var(--brand-2) 60%, transparent);
 }
 .brand__text { font-size: 1.15rem; letter-spacing: -0.01em; }
 .brand__text span { color: var(--brand); }
@@ -103,14 +103,14 @@ section[id] { scroll-margin-top: 84px; }
   position: relative; min-height: 100vh; display: flex; align-items: center;
   padding: 120px 0 60px;
   background:
-    radial-gradient(80% 60% at 70% 10%, rgba(79, 140, 255, 0.18), transparent 60%),
-    radial-gradient(70% 50% at 15% 80%, rgba(54, 226, 196, 0.14), transparent 55%),
+    radial-gradient(80% 60% at 70% 10%, color-mix(in srgb, var(--brand-2) 18%, transparent), transparent 60%),
+    radial-gradient(70% 50% at 15% 80%, color-mix(in srgb, var(--brand) 14%, transparent), transparent 55%),
     var(--bg);
   overflow: hidden;
 }
 .hero__glow {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: conic-gradient(from 0deg at 50% 50%, transparent, rgba(155, 123, 255, 0.06), transparent 30%);
+  background: conic-gradient(from 0deg at 50% 50%, transparent, color-mix(in srgb, var(--brand-2) 8%, transparent), transparent 30%);
   animation: spin 28s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -175,7 +175,7 @@ section[id] { scroll-margin-top: 84px; }
 .card:hover::before { opacity: 1; }
 .card__icon {
   width: 52px; height: 52px; display: grid; place-items: center; font-size: 1.4rem;
-  color: var(--brand); background: rgba(54, 226, 196, 0.1);
+  color: var(--brand); background: color-mix(in srgb, var(--brand) 10%, transparent);
   border-radius: 13px; margin-bottom: 22px;
 }
 .card h3 { font-size: 1.25rem; margin-bottom: 10px; }
@@ -191,7 +191,7 @@ section[id] { scroll-margin-top: 84px; }
 .ba__img { position: absolute; inset: 0; background-size: cover; background-position: center; }
 .ba__after {
   background:
-    radial-gradient(120% 120% at 30% 20%, rgba(79,140,255,0.35), transparent 50%),
+    radial-gradient(120% 120% at 30% 20%, color-mix(in srgb, var(--brand-2) 35%, transparent), transparent 50%),
     linear-gradient(135deg, #1b2a4a, #0c1322 70%);
 }
 .ba__after::after, .ba__before::after {
@@ -210,7 +210,7 @@ section[id] { scroll-margin-top: 84px; }
   backdrop-filter: blur(8px); z-index: 3;
 }
 .ba__tag--before { left: 18px; background: rgba(0,0,0,0.45); color: #fff; }
-.ba__tag--after { right: 18px; background: rgba(54,226,196,0.85); color: #04110f; }
+.ba__tag--after { right: 18px; background: color-mix(in srgb, var(--brand) 85%, transparent); color: #04110f; }
 .ba__handle {
   position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; transform: translateX(-50%);
   background: #fff; z-index: 4; pointer-events: none;
@@ -300,7 +300,7 @@ section[id] { scroll-margin-top: 84px; }
 
 /* ============ CTA / Form ============ */
 .cta { background:
-  radial-gradient(70% 90% at 80% 0%, rgba(79,140,255,0.14), transparent 60%), var(--bg-2); }
+  radial-gradient(70% 90% at 80% 0%, color-mix(in srgb, var(--brand-2) 14%, transparent), transparent 60%), var(--bg-2); }
 .cta__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .cta__text { color: var(--muted); margin: 18px 0 30px; max-width: 460px; }
 .cta__contacts { list-style: none; display: grid; gap: 16px; }
@@ -319,7 +319,7 @@ section[id] { scroll-margin-top: 84px; }
 }
 .field textarea { min-height: 90px; }
 .field input:focus, .field select:focus, .field textarea:focus {
-  border-color: var(--brand); box-shadow: 0 0 0 3px rgba(54,226,196,0.15);
+  border-color: var(--brand); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 15%, transparent);
 }
 .field label {
   position: absolute; left: 16px; top: 15px; color: var(--muted); font-size: 0.95rem;
@@ -362,7 +362,7 @@ section[id] { scroll-margin-top: 84px; }
 .channel.is-gis:hover  { background: rgba(60,200,90,0.16);  border-color: #3cc85a; }
 .channel.is-tt:hover   { background: rgba(255,255,255,0.08); border-color: #fff; }
 .channel.is-mail:hover { background: rgba(201,162,90,0.16); border-color: var(--accent); }
-.channel.is-call:hover { background: rgba(54,226,196,0.14); border-color: var(--brand); }
+.channel.is-call:hover { background: color-mix(in srgb, var(--brand) 14%, transparent); border-color: var(--brand); }
 
 /* ============ Floating contact dock ============ */
 .dock {
