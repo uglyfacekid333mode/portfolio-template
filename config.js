@@ -201,7 +201,7 @@ const CONFIG = {
     "filterExotic": "Категория 1",
     "filterDaily": "Категория 2",
     "filterInterior": "Категория 3",
-    "labelStudio": "Адрес",
+    "labelStudio": "Адрес бренда",
     "labelPhone": "Телефон",
     "labelHours": "Время",
     "formName": "Имя",
