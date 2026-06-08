@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Современный сайт-портфолио под ваш бренд — лендинги, услуги, работы, контакты." />
+  <meta property="og:title" content="Портфолио — современный сайт под ваш бренд" />
+  <meta property="og:description" content="Готовый адаптивный сайт-портфолио: ваш логотип, тексты, цвета и интеграции." />
+  <meta property="og:type" content="website" />
+  <title>Портфолио — современный сайт под ваш бренд</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="brand" data-brand></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#services" data-text="navServices"></a>
+        <a href="#work" data-text="navWork"></a>
+        <a href="#process" data-text="navProcess"></a>
+        <a href="#reviews" data-text="navReviews"></a>
+        <a href="#contact" class="btn btn--sm" data-text="navBook"></a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero__glow"></div>
+    <div class="container hero__inner">
+      <p class="eyebrow" data-reveal data-hero="eyebrow"></p>
+      <h1 class="hero__title" data-reveal>
+        <span data-hero="titleLine1"></span><br /><span class="grad" data-hero="titleAccent"></span>
+      </h1>
+      <p class="hero__sub" data-reveal data-hero="subtitle"></p>
+      <div class="hero__cta" data-reveal>
+        <a href="#contact" class="btn btn--lg" data-hero="ctaPrimary"></a>
+        <a href="#work" class="btn btn--ghost btn--lg" data-hero="ctaSecondary"></a>
+      </div>
+      <div class="hero__stats" data-reveal>
+        <div class="stat"><span class="stat__top"><span class="stat__num" data-count="80">0</span><span class="stat__suffix">+</span></span><span class="stat__label" data-text="statCars"></span></div>
+        <div class="stat"><span class="stat__top"><span class="stat__num" data-count="5">0</span><span class="stat__suffix">+</span></span><span class="stat__label" data-text="statYears"></span></div>
+        <div class="stat"><span class="stat__top"><span class="stat__num" data-count="100">0</span><span class="stat__suffix">%</span></span><span class="stat__label" data-text="statSatisfaction"></span></div>
+      </div>
+    </div>
+    <div class="hero__scroll" data-text="scroll"></div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee"><div class="marquee__track" id="marquee"></div></div>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow" data-text="servicesEyebrow"></p>
+        <h2 class="section__title" data-text="servicesTitle"></h2>
+      </header>
+      <div class="cards" id="cards"></div>
+    </div>
+  </section>
+
+  <!-- Before / After -->
+  <section class="section section--alt" id="reveal">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow" data-text="baEyebrow"></p>
+        <h2 class="section__title" data-text="baTitle"></h2>
+      </header>
+      <div class="ba" id="ba" data-reveal>
+        <div class="ba__img ba__after" id="baAfter"><span class="ba__tag ba__tag--after" data-text="baAfter"></span></div>
+        <div class="ba__img ba__before" id="baBefore"><span class="ba__tag ba__tag--before" data-text="baBefore"></span></div>
+        <div class="ba__handle" id="baHandle"><span></span></div>
+        <input type="range" min="0" max="100" value="50" class="ba__range" id="baRange" aria-label="Ползунок" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Work / Gallery -->
+  <section class="section" id="work">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow" data-text="workEyebrow"></p>
+        <h2 class="section__title" data-text="workTitle"></h2>
+      </header>
+      <div class="filters" data-reveal>
+        <button class="filter is-active" data-filter="all" data-text="filterAll"></button>
+        <button class="filter" data-filter="landing" data-text="filterExotic"></button>
+        <button class="filter" data-filter="shop" data-text="filterDaily"></button>
+        <button class="filter" data-filter="portfolio" data-text="filterInterior"></button>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section--alt" id="process">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow" data-text="processEyebrow"></p>
+        <h2 class="section__title" data-text="processTitle"></h2>
+      </header>
+      <ol class="steps" id="steps"></ol>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow" data-text="reviewsEyebrow"></p>
+        <h2 class="section__title" data-text="reviewsTitle"></h2>
+      </header>
+      <div class="reviews" id="reviewsList"></div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact -->
+  <section class="section cta" id="contact">
+    <div class="container cta__inner">
+      <div class="cta__copy" data-reveal>
+        <p class="eyebrow" data-text="contactEyebrow"></p>
+        <h2 class="section__title" data-text="contactTitle"></h2>
+        <p class="cta__text" data-text="contactText"></p>
+        <ul class="cta__contacts">
+          <li><span data-text="labelStudio"></span><a data-contact="address"></a></li>
+          <li><span data-text="labelPhone"></span><a data-contact="phone"></a></li>
+          <li><span data-text="labelHours"></span><span data-contact="hours"></span></li>
+        </ul>
+        <div class="channels" id="channels" data-reveal></div>
+      </div>
+      <form class="form" id="bookingForm" data-reveal novalidate>
+        <div class="field">
+          <input type="text" id="name" name="name" required placeholder=" " />
+          <label for="name" data-text="formName"></label>
+        </div>
+        <div class="field">
+          <input type="tel" id="phone" name="phone" required placeholder=" " />
+          <label for="phone" data-text="formPhone"></label>
+        </div>
+        <div class="field">
+          <input type="text" id="vehicle" name="vehicle" placeholder=" " />
+          <label for="vehicle" data-text="formVehicle"></label>
+        </div>
+        <div class="field">
+          <select id="service" name="service" required></select>
+          <label for="service" class="label--static" data-text="formService"></label>
+        </div>
+        <div class="field">
+          <textarea id="message" name="message" rows="3" placeholder=" "></textarea>
+          <label for="message" data-text="formMessage"></label>
+        </div>
+        <button type="submit" class="btn btn--lg btn--full" data-text="formSubmit"></button>
+        <p class="form__note" id="formNote" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- 2GIS Map -->
+  <section class="map-section" id="map-section">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow" data-text="mapEyebrow"></p>
+        <h2 class="section__title" data-text="mapTitle"></h2>
+      </header>
+    </div>
+    <div class="map-wrap" data-reveal>
+      <iframe id="mapFrame" title="2GIS карта" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#home" class="brand" data-brand></a>
+      <p class="footer__copy">© <span id="year"></span> <span data-contact="full"></span>. <span data-text="footerTagline"></span></p>
+      <div class="footer__social" id="footerSocial"></div>
+    </div>
+  </footer>
+
+  <!-- Floating contact dock -->
+  <div class="dock" id="dock"></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
