@@ -21,7 +21,7 @@ const CONFIG = {
     nameAccent: "ЛОГО",
   },
 
-  brand: { full: "ТЕСТ-ДЕПЛОЙ" },
+  brand: { full: "Ваш бренд" },
 
   contact: {
     phone: "Ваш телефон",
