@@ -1,8 +1,8 @@
 /* config.js — обновлено из редактора */
 const CONFIG = {
   "theme": {
-    "brand": "#6366f1",
-    "brand2": "#22d3ee",
+    "brand": "#a51d2d",
+    "brand2": "#f66151",
     "accent": "#fbbf24",
     "bg": "#0a0a14",
     "text": "#eef2f7"
